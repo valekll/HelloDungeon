@@ -416,10 +416,10 @@ public class Character extends Thing {
 		switch(stat) {
 			case HP:
 				dynaStats[0] += val;
-				if(dynaStats[0] > stats[0]) {
+				if(dynaStats[0] > stats[0]) { //don't overcap
 					dynaStats[0] = stats[0];
 				} //if
-				else if(dynaStats[0] < 0) {
+				else if(dynaStats[0] < 0) { //can't go below 0
 					dynaStats[0] = 0;
 				} //else if
 				return;
