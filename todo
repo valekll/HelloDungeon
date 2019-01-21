@@ -9,11 +9,6 @@ modify speed stat across the board to want a base of 40, etc.
 PlayerChar: Movement, Actions(?) [abilities that can be used without a menu], Stronger Level Ups/Luck Based
 
 CombatAbility.iterate(): Should perhaps take input from Character/Environtment????
-
-Party
-	- swap(index1, index2) -init implementation done, need overloads
-		- moveToPartyLeader(Char) {swap(0, char index)}
-	- getindexOf(Char)
 	
 Gambling
 Money
