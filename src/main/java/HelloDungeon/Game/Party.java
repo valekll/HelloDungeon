@@ -39,6 +39,22 @@ public class Party {
 	} //addToParty()
 	
 	/**
+	 * Gets the index location of a party member. Will return -1 if the Character is not part of the party.
+	 * @param c the Character
+	 * @return the Character's location in the party.
+	 */
+	public int getIndexOf(Character c) {
+		int loc = -1;
+		for(int i = 0; i < characters.length; i++) {
+			if(c.equals(characters[i])) {
+				loc = i;
+				break;
+			} //if
+		} //for
+		return loc;
+	} //getIndexOf()
+	
+	/**
 	 * Gets the character at the specified index.
 	 * @param i the index
 	 * @return the Character
@@ -110,6 +126,48 @@ public class Party {
 		characters[i2] = temp;
 		return true;
 	} //swap()
+	
+	/**
+	 * Swaps two given Characters' position in the party.
+	 * @param c1 the first Character
+	 * @param c2 the second Character
+	 * @return if the Characters were swapped
+	 */
+	public boolean swap(Character c1, Character c2) {
+		if(contains(c1) && contains(c2)) {
+			return swap(getIndexOf(c1), getIndexOf(c2));
+		} //if
+		return false;
+	} //swap()
+	
+	/**
+	 * Moves the Character at a given index to the party leader position.
+	 * @param i the index
+	 * @return if the Character was successfully moved to the leader position
+	 */
+	public boolean moveToLeader(int i) {
+		if(i == 0) {
+			return true;
+		} //if
+		else if(i < characters.length && i > 0) {
+			return swap(0, i);
+		} //else if
+		return false;
+	} //moveToLeader()
+	
+	/**
+	 * Moves the Character to the party leader position.
+	 * @param c the Character
+	 * @return if the Character was successfully moved to the leader position
+	 */
+	public boolean moveToLeader(Character c) {
+		for(int i = 0; i < characters.length; i++) {
+			if(c.equals(characters[i])) {
+				return moveToLeader(i);
+			} //if
+		} //for
+		return false;
+	} //moveToLeader()
 
 	/**
 	 * Checks if a character is a member of the party.
