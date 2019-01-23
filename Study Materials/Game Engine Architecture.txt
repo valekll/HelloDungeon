@@ -1,4 +1,5 @@
-Page: 173
+Page: 206
 Target Page: 985
 Target Pages Per Day: 61
 Target Days: 14
+Day 2 Target: 206 -> 267
