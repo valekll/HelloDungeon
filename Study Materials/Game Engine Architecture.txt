@@ -1,1 +1,4 @@
-pg 173
+Page: 173
+Target Page: 985
+Target Pages Per Day: 61
+Target Days: 14
